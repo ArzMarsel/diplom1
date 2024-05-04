@@ -8,3 +8,4 @@ class List_of_dishes(ListView):
     template_name = 'restaurant/main.html'
     context_object_name = 'dish'
 
+

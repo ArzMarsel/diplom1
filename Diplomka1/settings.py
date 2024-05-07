@@ -120,9 +120,9 @@ USE_TZ = True
 
 STATIC_URL = 'static/'
 
-STATICFILES_ROOT = os.path.join(BASE_DIR, 'static/')
-STATIC_DIRS = [
-    os.path.join(BASE_DIR, 'staticfiles')
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
 ]
 
 # Default primary key field type
@@ -132,5 +132,5 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = '/'
 
-RECAPTCHA_PRIVATE_KEY = '6LdnS6ApAAAAALuDgKrYXHj2Ni6BuzcIMInLxUTE'
-RECAPTCHA_PUBLIC_KEY = '6LdnS6ApAAAAACVHyALeJ-0td-qMD2Qe8KrqAPom'
+RECAPTCHA_PUBLIC_KEY = '6Lcqb88pAAAAAMw5j5_SoKt9Fw0kHgyJtjJsf7A1'
+RECAPTCHA_PRIVATE_KEY = '6Lcqb88pAAAAAGEilE50_806Z1bTxYhUAd46eb5_'

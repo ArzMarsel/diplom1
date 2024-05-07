@@ -1,8 +1,5 @@
+from django.contrib.auth.models import User
 from django.db import models
-
-
-class Dish_image(models.Model):
-    image = models.ImageField('Image:', upload_to='product_image/')
 
 
 class Dish(models.Model):
@@ -18,9 +15,13 @@ class Dish(models.Model):
     info = models.TextField('Information')
     price = models.FloatField('Price')
     status = models.CharField(verbose_name='Status:', max_length=30, choices=Choices_list)
-    image = models.ForeignKey(Dish_image, verbose_name='Image:', on_delete=models.CASCADE)
 
 
+class Dish_image(models.Model):
+    image = models.ImageField('Image:', upload_to='product_image/')
+    dish = models.ForeignKey(Dish, on_delete=models.CASCADE)
 
 
-
+class Connect(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    dish = models.ForeignKey(Dish, on_delete=models.CASCADE)
